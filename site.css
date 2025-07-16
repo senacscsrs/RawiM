@@ -1,3 +1,4 @@
+/* Show/site.css */
 
 body {
     font-family: Arial, sans-serif;
@@ -7,7 +8,7 @@ body {
     color: #333;
 }
 
-.container {
+.recipiente {
     width: 80%;
     margin: 0 auto;
     padding: 20px 0;
@@ -59,7 +60,7 @@ footer {
     margin-top: 40px;
 }
 
-.button {
+.botao {
     display: inline-block;
     background-color: #007bff;
     color: #fff;
@@ -75,12 +76,12 @@ header h1 a {
     text-decoration: none;
 }
 
-.button:hover {
+.botao:hover {
     background-color: #0056b3;
 }
 
 
-.product-highlight {
+.destaque-produto {
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -90,35 +91,35 @@ header h1 a {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.product-highlight .product-image {
+.destaque-produto .imagem-produto {
     width: 300px;
     height: auto;
     margin-right: 30px;
 }
 
-.product-highlight .product-info {
+.destaque-produto .informacoes-produto {
     flex-grow: 1;
 }
 
-.product-highlight .product-info h2 {
+.destaque-produto .informacoes-produto h2 {
     margin-top: 0;
     color: #333;
 }
 
-.product-highlight .product-info .price {
+.destaque-produto .informacoes-produto .preco {
     font-size: 1.5em;
     color: #007bff;
     font-weight: bold;
 }
 
-.other-products {
+.outros-produtos {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
     flex-wrap: wrap;
 }
 
-.product-card {
+.cartao-produto {
     background-color: #fff;
     padding: 15px;
     border-radius: 8px;
@@ -128,19 +129,19 @@ header h1 a {
     margin-bottom: 20px;
 }
 
-.product-card h3 {
+.cartao-produto h3 {
     margin-top: 0;
     font-size: 1.2em;
 }
 
-.product-card .price {
+.cartao-produto .preco {
     font-size: 1.1em;
     color: #007bff;
     font-weight: bold;
 }
 
 
-.product-detail {
+.detalhe-produto {
     display: flex;
     align-items: flex-start;
     background-color: #fff;
@@ -150,46 +151,46 @@ header h1 a {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.product-detail .product-image-large {
+.detalhe-produto .imagem-produto-grande {
     width: 400px;
     height: auto;
     margin-right: 40px;
 }
 
-.product-detail .product-info-detail {
+.detalhe-produto .informacoes-produto-detalhe {
     flex-grow: 1;
 }
 
-.product-detail .product-info-detail h2 {
+.detalhe-produto .informacoes-produto-detalhe h2 {
     margin-top: 0;
     color: #333;
 }
 
-.product-detail .product-info-detail .price {
+.detalhe-produto .informacoes-produto-detalhe .preco {
     font-size: 1.8em;
     color: #007bff;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.product-detail .product-info-detail .description {
+.detalhe-produto .informacoes-produto-detalhe .descricao {
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.add-to-cart {
+.adicionar-ao-carrinho {
     padding: 12px 25px;
     font-size: 1.1em;
 }
 
 
-.cart-page h2 {
+.pagina-carrinho h2 {
     text-align: center;
     margin-bottom: 30px;
     color: #333;
 }
 
-.cart-item {
+.item-carrinho {
     background-color: #fff;
     padding: 15px;
     margin-bottom: 15px;
@@ -200,11 +201,11 @@ header h1 a {
     align-items: center;
 }
 
-.cart-item p {
+.item-carrinho p {
     margin: 0;
 }
 
-.cart-summary {
+.resumo-carrinho {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -213,25 +214,25 @@ header h1 a {
     margin-top: 30px;
 }
 
-.cart-summary p {
+.resumo-carrinho p {
     font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-.checkout-button {
+.botao-finalizar-compra {
     padding: 12px 30px;
     font-size: 1.2em;
 }
 
 
-.checkout-page h2 {
+.pagina-finalizar-compra h2 {
     text-align: center;
     margin-bottom: 30px;
     color: #333;
 }
 
-.checkout-form {
+.formulario-finalizar-compra {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
@@ -240,13 +241,13 @@ header h1 a {
     margin: 0 auto;
 }
 
-.checkout-form label {
+.formulario-finalizar-compra label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
-.checkout-form input[type="text"] {
+.formulario-finalizar-compra input[type="text"] {
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 20px;
@@ -254,7 +255,7 @@ header h1 a {
     border-radius: 4px;
 }
 
-.checkout-form .button {
+.formulario-finalizar-compra .botao {
     width: 100%;
     text-align: center;
     padding: 15px;
@@ -262,13 +263,13 @@ header h1 a {
 }
 
 
-.login-page h2 {
+.pagina-login h2 {
     text-align: center;
     margin-bottom: 30px;
     color: #333;
 }
 
-.login-form {
+.formulario-login {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
@@ -277,14 +278,14 @@ header h1 a {
     margin: 0 auto;
 }
 
-.login-form label {
+.formulario-login label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
-.login-form input[type="email"],
-.login-form input[type="password"] {
+.formulario-login input[type="email"],
+.formulario-login input[type="password"] {
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 20px;
@@ -292,38 +293,40 @@ header h1 a {
     border-radius: 4px;
 }
 
-.login-form .forgot-password {
-    display: block;
+.formulario-login .esqueceu-senha {
+    display: block; 
     text-align: right;
     margin-bottom: 20px;
     color: #007bff;
     text-decoration: none;
 }
 
-.login-form .forgot-password:hover {
-    text-decoration: underline;
+.formulario-login .esqueceu-senha:hover {
+     text-decoration: underline;
 }
 
-.login-form .button {
+.formulario-login .botao {
     width: 100%;
     text-align: center;
     padding: 15px;
     font-size: 1.1em;
+    box-sizing: border-box; 
+    display: block;
 }
 
 
-.my-products-page h2 {
+.pagina-meus-produtos h2 {
     text-align: center;
     margin-bottom: 30px;
     color: #333;
 }
 
-.add-new-product {
+.adicionar-novo-produto {
     margin-bottom: 20px;
     float: right;
 }
 
-.products-table {
+.tabela-produtos {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -333,40 +336,53 @@ header h1 a {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.products-table th,
-.products-table td {
+.tabela-produtos th,
+.tabela-produtos td {
     padding: 12px 15px;
     border-bottom: 1px solid #ddd;
     text-align: left;
 }
 
-.products-table th {
+.tabela-produtos th {
     background-color: #f2f2f2;
     font-weight: bold;
     color: #555;
 }
 
-.products-table tbody tr:last-child td {
+.tabela-produtos tbody tr:last-child td {
     border-bottom: none;
 }
 
-.products-table td a {
+.tabela-produtos td a { 
     margin-right: 10px;
     color: #007bff;
     text-decoration: none;
 }
 
-.products-table td a:hover {
+.tabela-produtos td .botao-acao {
+    display: inline-block;
+    background: none; 
+    color: #007bff; 
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    cursor: pointer;
+    text-decoration: none; 
+    margin-right: 10px;
+}
+
+.tabela-produtos td .botao-acao:hover {
     text-decoration: underline;
 }
 
-.contact-page h2 {
+
+.pagina-contato h2 {
     text-align: center;
     margin-bottom: 30px;
     color: #333;
 }
 
-.contact-form {
+.formulario-contato {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
@@ -375,14 +391,14 @@ header h1 a {
     margin: 0 auto;
 }
 
-.contact-form label {
+.formulario-contato label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
-.contact-form input[type="text"],
-.contact-form textarea {
+.formulario-contato input[type="text"],
+.formulario-contato textarea {
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 20px;
@@ -390,11 +406,11 @@ header h1 a {
     border-radius: 4px;
 }
 
-.contact-form textarea {
+.formulario-contato textarea {
     resize: vertical;
 }
 
-.contact-form .button {
+.formulario-contato .botao {
     width: 100%;
     text-align: center;
     padding: 15px;
