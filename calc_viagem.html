@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de viagem com gasto de gasolina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: aqua;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculadora de viagem com gasto de gasolina</h1>
+
+    <script>
+        let nome = prompt("Qual o seu nome?");
+        let distancia = parseFloat(prompt("Qual a distância em km?"));
+        let velocidade = parseFloat(prompt("Qual a velocidade média em km/h?"));
+        let consumo = parseFloat(prompt("Qual o consumo do seu carro por litro?"));
+        let preco = parseFloat(prompt("Qual o preço da gasolina por litro?"));
+
+        let tempo = distancia / velocidade;
+        let litros = distancia / consumo;
+        let gasto = litros * preco;
+
+        alert("Olá " + nome +
+            ". O tempo de viagem será de " + tempo + " horas. " +
+            "Você usará " + litros + " litros de gasolina e seu gasto será de R$ " + gasto);
+        console.log("Olá " + nome +
+            ". O tempo de viagem será de " + tempo + " horas. " +
+            "Você usará " + litros + " litros de gasolina e seu gasto será de R$ " + gasto);
+    </script>
+
+</body>
+
+</html>
