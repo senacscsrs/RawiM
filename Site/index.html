@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rawi M | Desenvolvedor Front-End</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="container nav-container">
+            <a href="#home" style="color: #000000;" class="logo">Rawi Mohr</a>
+
+            <div class="nav-desktop">
+                <a href="#home">Home</a>
+                <a href="#sobre">Sobre mim</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+                <a href="https://www.instagram.com/rawi_mohr" class="social-icon" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                <a href="https://github.com/RawiMohr" class="social-icon" aria-label="GitHub"><i data-feather="github"></i></a>
+            </div>
+
+            <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Abrir menu">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre mim</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+            <div class="mobile-socials">
+                <a href="https://www.instagram.com/rawi_mohr"><i style = "color: #C13584" data-feather="instagram"></i> Instagram</a>
+                <a href="https://github.com/RawiMohr"><i data-feather="github"></i> GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <h1>Olá, meu nome é <span>Rawi Mohr</span></h1>
+                <h2>Estudante de tecnologia</h2>
+                <a href="#sobre" class="btn btn-primary">Ver mais</a>
+            </div>
+        </section>
+
+<section id="sobre" class="page-section">
+            <div class="container about-container">
+                <div class="about-text">
+                    <h2 style="color: #000000;" class= "section-title">Sobre mim</h2>
+                    <p>
+                        Oi, eu sou o Rawi! Sou estudante no Senac RS. Gosto de criar interfaces que realmente façam sentido para quem usa, bonitas, responsivas e funcionais. Estou sempre aprendendo e me desafiando pra evoluir e construir soluções web cada vez mais eficientes e criativas.
+                    </p>
+                    <br>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/rawi_mohr"><i data-feather="instagram"></i> Instagram</a>
+                        <a href="https://github.com/RawiMohr"><i data-feather="github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="habilidades" class="page-section">
+            <div class="container">
+                <h2 style="color: #000000;" class="section-title text-center">Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i data-feather="code"></i>
+                        <span>HTML</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-feather="layers"></i>
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-feather="code"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-card">
+                        <span>TI</span> <span>Tecnologia</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-feather="file-text"></i>
+                        <span>Pacote Office </span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-feather="github"></i>
+                        <span>GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="page-section">
+            <div class="container">
+                <h2 style="color: #000000;" class="section-title text-center">Projetos</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="imagens/curriculo.png" alt="Projeto 1" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Projeto 1 - Curriculo</h3>
+                            <p class="project-description">Meu curriculo feito em um arquivo HTML e CSS.</p>
+                            <a href="/atividades/curriculo.html" class="project-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="imagens/wireframe.png" alt="Projeto 2" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Projeto 2 - Site Wireframe</h3>
+                            <p class="project-description">Site feito com base em um wireframe do Figma</p>
+                            <a href="/siteWireframe/Pagina_inicial.html" class="project-link">Ver projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="contato" class="page-section">
+    
+    <h2 style="color: #000000;" class="section-title text-center">Contato</h2>
+
+    <div class="contact-wrapper">
+        <p>Interessado em falar comigo? Entre em contato!</p>
+
+        <div class="contact-socials">
+            
+            <a href="mailto:margarida.mohr@gmail.com" class="btn btn-primary">
+                <i data-feather="mail"></i>
+                <span>Email</span>
+            </a>
+
+            <a href="https://github.com/RawiMohr" class="btn btn-primary"> <i data-feather="github"></i>
+                <span>GitHub</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+</main>
+
+    <script>
+      feather.replace();
+    </script>
+
+</body>
+</html>

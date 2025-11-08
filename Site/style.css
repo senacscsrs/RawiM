@@ -1,0 +1,536 @@
+
+:root {
+    --color-primary: #0b73da;
+    --color-secondary: #627084;
+    --color-text: #1f2937;
+    /* text-gray-800 */
+    --color-text-light: #4B5563;
+    /* text-gray-600 */
+    --color-text-label: #374151;
+    /* text-gray-700 */
+    --color-bg: #f9fafb;
+    /* bg-gray-50 */
+    --color-white: #ffffff;
+    --color-border: #D1D5DB;
+    /* border-gray-300 */
+    --font-sans: 'Inter', sans-serif;
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Adicionado para que o header fixo não cubra o topo das seções */
+    scroll-padding-top: 70px;
+    /* Ajuste este valor se a altura do header mudar */
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Utilitários de Layout --- */
+.container {
+    max-width: 1152px;
+    /* max-w-6xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    /* px-4 */
+    padding-right: 1rem;
+    /* px-4 */
+}
+
+.page-section {
+    padding-top: 3rem;
+    /* py-12 */
+    padding-bottom: 3rem;
+    /* py-12 */
+    margin-bottom: 5rem;
+    /* mb-20 */
+}
+
+.section-title {
+    font-size: 2.625rem;
+    /* text-3xl */
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+    /* mb-12 */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Botões --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    /* px-8 py-3 */
+    border: none;
+    border-radius: 100rem;
+    /* rounded-md */
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.btn:hover {
+    box-shadow: var(--shadow-lg);
+    opacity: 0.9;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* --- Header / Navegação --- */
+.site-header {
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.logo {
+    font-size: 1.25rem;
+    /* text-xl */
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--color-secondary);
+}
+
+.nav-desktop {
+    display: none;
+    /* Escondido em mobile */
+    align-items: center;
+    gap: 1.5rem;
+    /* gap-6 */
+}
+
+.nav-desktop a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-desktop a:hover {
+    color: var(--color-primary);
+}
+
+.nav-desktop a.active {
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+.nav-desktop .social-icon {
+    color: var(--color-text-light);
+}
+
+.nav-desktop .social-icon:hover {
+    color: var(--color-primary);
+}
+
+.mobile-menu-button {
+    display: block;
+    /* Visível em mobile */
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    /* Escondido por padrão */
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-lg);
+}
+
+.mobile-menu.is-open {
+    display: block;
+    /* Exibido via JS */
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    /* px-6 py-3 */
+    color: var(--color-text-label);
+    text-decoration: none;
+}
+
+.mobile-menu a:hover {
+    background-color: var(--color-bg);
+}
+
+.mobile-menu a.active {
+    color: var(--color-secondary);
+    background-color: var(--color-bg);
+    font-weight: 600;
+}
+
+.mobile-socials {
+    display: flex;
+    gap: 1.5rem;
+    /* gap-6 */
+    padding: 1rem 1.5rem;
+    /* px-6 py-4 */
+    border-top: 1px solid #f3f4f6;
+    /* border-gray-100 */
+}
+
+.mobile-socials a {
+    padding: 0;
+    color: var(--color-text-light);
+}
+
+.mobile-socials a:hover {
+    background: none;
+    color: var(--color-primary);
+}
+
+
+/* --- Seção Hero (#home) --- */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 12rem;
+    /* mb-20 */
+}
+
+.hero-section h1 {
+    font-weight: bold;
+    font-size: 3rem;
+    /* text-4xl */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    /* mb-4 */
+}
+
+.hero-section h1 span {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.hero-section h2 {
+    font-size: 1.875rem;
+    /* text-2xl */
+    font-weight: 500;
+    color: var(--color-secondary);
+    margin-bottom: 2rem;
+    /* mb-8 */
+}
+
+/* --- Seção Sobre (#sobre) --- */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    /* Empilha os filhos verticalmente */
+    align-items: center;
+    /* Centraliza os filhos horizontalmente (o título, o card e os links) */
+    gap: 2rem;
+    /* Adiciona um espaço vertical entre o título, o card e os links */
+}
+
+/* O .about-text agora é o "card" que contém o parágrafo */
+.about-text {
+    width: 90%;
+    /* Responsivo, ocupa 90% da largura do container */
+
+    /* PASSO 2: Altere esta linha */
+    max-width: 900px;
+    /* <<< AUMENTADO (antes era 700px) */
+
+    background-color: #ffffff;
+    /* Fundo branco para o card */
+    border-radius: 0.75rem;
+    /* Bordas arredondadas (como no exemplo) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Sombra suave (como no exemplo) */
+    padding: 2rem;
+    /* Espaçamento interno (dentro do card) */
+    text-align: center;
+    /* Garante que o texto dentro do card fique alinhado à esquerda */
+}
+
+/* Estilo do parágrafo dentro do card */
+.about-text p {
+    font-size: 1.125rem;
+    /* text-lg */
+    line-height: 1.75;
+    /* leading-relaxed */
+    margin-bottom: 0;
+    /* Remove a margem, pois o padding do card já dá o espaço */
+    text-align: center;
+}
+
+.social-links {
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* gap-2 */
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-primary);
+}
+
+/* --- Seção Habilidades (#habilidades) --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-cols-2 */
+    gap: 1.5rem;
+    /* gap-6 */
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.skill-card i {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--color-primary);
+}
+
+.skill-card span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* --- Seção Projetos (#projetos) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* 1 coluna por padrão */
+    gap: 2rem;
+    /* gap-8 */
+}
+
+.project-card {
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+}
+
+.project-link {
+    display: inline-block;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color:var(--color-primary)
+    /* Tom mais escuro */
+}
+
+/* --- Seção Contato (#contato) --- */
+/* --- Seção Contato (#contato) --- */
+
+/* Este é o .contact-wrapper, agora sem o "quadrado" */
+.contact-wrapper {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    /* Centraliza o <p> */
+
+    /* REMOVIDO: background-color, padding, border-radius, box-shadow */
+}
+
+/* O subtítulo */
+.contact-wrapper p {
+    font-size: 1.125rem;
+    /* Tamanho médio */
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+}
+
+/* O container dos botões */
+.contact-socials {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* Espaço entre os botões */
+}
+
+/* Isto é MUITO IMPORTANTE:
+  Faz o ícone e o texto dentro do botão ficarem alinhados.
+*/
+.contact-socials a.btn {
+    display: inline-flex;
+    /* Usa flex para alinhar o ícone e o texto */
+    align-items: center;
+    /* Centraliza eles verticalmente */
+    gap: 0.5rem;
+    /* Espaço entre o ícone e o texto */
+}
+
+/* APAGUE todas as regras de CSS abaixo que você tinha:
+  - form { ... }
+  - .form-group { ... }
+  - form label { ... }
+  - form input, form textarea { ... }
+*/
+
+
+/* --- Media Queries (Responsividade) --- */
+
+/* Breakpoint 'md' (768px) - Tablets e Desktops pequenos */
+@media (min-width: 768px) {
+    .nav-desktop {
+        display: flex;
+        /* Mostra o menu desktop */
+    }
+
+    .mobile-menu-button {
+        display: none;
+        /* Esconde o botão hamburguer */
+    }
+
+    .mobile-menu {
+        display: none !important;
+        /* Garante que o menu mobile esteja sempre fechado */
+    }
+
+    .hero-section h1 {
+        font-size: 4rem;
+        /* text-5xl */
+    }
+
+    .hero-section h2 {
+        font-size: 2.5rem;
+        /* text-3xl */
+    }
+
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-cols-3 */
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* grid-cols-2 */
+    }
+}
+
+/* Breakpoint 'lg' (1024px) - Desktops maiores */
+@media (min-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(6, 1fr);
+        /* grid-cols-6 */
+    }
+}
