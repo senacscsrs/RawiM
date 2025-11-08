@@ -1,4 +1,3 @@
-
 :root {
     --color-primary: #0b73da;
     --color-secondary: #627084;
@@ -431,8 +430,8 @@ img {
 }
 
 .project-link:hover {
-    color:var(--color-primary)
-    /* Tom mais escuro */
+    color: var(--color-primary)
+        /* Tom mais escuro */
 }
 
 /* --- Seção Contato (#contato) --- */
@@ -533,4 +532,11 @@ img {
         grid-template-columns: repeat(6, 1fr);
         /* grid-cols-6 */
     }
+}
+
+/* Define a cor do link ativo no menu */
+.nav-desktop a.active,
+.mobile-menu a.active {
+    color: #007bff;
+    /* <-- Mude esta cor! */
 }

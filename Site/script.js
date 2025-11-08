@@ -35,15 +35,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    // 3. Form submission
-    const form = document.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-            form.reset();
-        });
-    }
+
 
     // 4. Funcionalidade do Menu Mobile
     const menuButton = document.getElementById('mobile-menu-button');
