@@ -37,6 +37,8 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
     line-height: 1.6;
+    /* Adicionado para suavizar a troca de cores */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img {
@@ -104,11 +106,6 @@ img {
     color: var(--color-white);
 }
 
-.btn-full {
-    width: 100%;
-    text-align: center;
-}
-
 
 /* --- Header / Navegação --- */
 .site-header {
@@ -118,6 +115,7 @@ img {
     top: 0;
     z-index: 50;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .nav-container {
@@ -186,6 +184,7 @@ img {
     /* Escondido por padrão */
     background-color: var(--color-white);
     box-shadow: var(--shadow-lg);
+    transition: background-color 0.3s ease;
 }
 
 .mobile-menu.is-open {
@@ -287,7 +286,7 @@ img {
     max-width: 900px;
     /* <<< AUMENTADO (antes era 700px) */
 
-    background-color: #ffffff;
+    background-color: var(--color-white);
     /* Fundo branco para o card */
     border-radius: 0.75rem;
     /* Bordas arredondadas (como no exemplo) */
@@ -297,6 +296,7 @@ img {
     /* Espaçamento interno (dentro do card) */
     text-align: center;
     /* Garante que o texto dentro do card fique alinhado à esquerda */
+    transition: background-color 0.3s ease;
 }
 
 /* Estilo do parágrafo dentro do card */
@@ -477,12 +477,6 @@ img {
     /* Espaço entre o ícone e o texto */
 }
 
-/* APAGUE todas as regras de CSS abaixo que você tinha:
-  - form { ... }
-  - .form-group { ... }
-  - form label { ... }
-  - form input, form textarea { ... }
-*/
 
 
 /* --- Media Queries (Responsividade) --- */
@@ -539,4 +533,144 @@ img {
 .mobile-menu a.active {
     color: #007bff;
     /* <-- Mude esta cor! */
+}
+
+
+/* ==============================================
+    NOVOS ESTILOS - MODO ESCURO
+==============================================
+*/
+
+/* --- Estilos do Botão Dark Mode --- */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-light);
+    padding: 0;
+    margin-left: 0.5rem;
+    /* Espaçamento */
+    transition: color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    color: var(--color-primary);
+}
+
+.dark-mode-toggle i {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    /* Alinha o ícone */
+}
+
+/* Versão mobile */
+.dark-mode-toggle-mobile {
+    display: flex !important;
+    /* Sobrescreve o display: block */
+    align-items: center;
+    gap: 0.5rem;
+    /* Espaço entre ícone e texto */
+}
+
+.dark-mode-toggle-mobile .icon-sun,
+.dark-mode-toggle-mobile .icon-moon {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- Controle dos Ícones Sol/Lua --- */
+.icon-sun {
+    display: none;
+    /* Sol começa escondido */
+}
+
+.icon-moon {
+    display: inline-block;
+    /* Lua começa visível */
+}
+
+body.dark-mode .icon-sun {
+    display: inline-block;
+    /* No dark mode, sol aparece */
+}
+
+body.dark-mode .icon-moon {
+    display: none;
+    /* No dark mode, lua desaparece */
+}
+
+
+/* --- Variáveis e Estilos do Modo Escuro --- */
+body.dark-mode {
+    /* Inverte as cores de fundo e texto */
+    --color-bg: #111827;
+    /* bg-gray-900 */
+    --color-text: #f9fafb;
+    /* text-gray-50 */
+
+    /* Inverte as cores de cards e texto de card */
+    --color-white: #1f2937;
+    /* bg-gray-800 */
+    --color-text-light: #9CA3AF;
+    /* text-gray-400 */
+    --color-text-label: #D1D5DB;
+    /* text-gray-300 */
+    --color-secondary: #9CA3AF;
+    /* text-gray-400 */
+
+    /* Cor da borda */
+    --color-border: #374151;
+    /* border-gray-700 */
+
+    /* Sombra para o modo escuro (opcional, pode remover se preferir) */
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.2);
+}
+
+/* --- Ajustes Finos para o Dark Mode --- */
+
+/* Força a cor do logo, títulos de seção e títulos de projeto
+   que tinham 'color: #000000' ou 'color: black' */
+body.dark-mode .logo,
+body.dark-mode .section-title[style*="#000000"],
+body.dark-mode .project-title,
+body.dark-mode .project-link {
+    color: var(--color-text) !important;
+}
+
+body.dark-mode .project-link:hover {
+    color: var(--color-primary) !important;
+}
+
+/* Ajusta links sociais do menu mobile */
+body.dark-mode .mobile-socials {
+    border-top-color: var(--color-border);
+}
+
+body.dark-mode .mobile-socials a {
+    color: var(--color-text-light);
+}
+
+/* Mantém a cor do ícone do Instagram */
+body.dark-mode .mobile-socials a [style*="#C13584"] {
+    color: #E1306C !important;
+}
+
+/* Ajusta a COR do link ativo (tanto desktop quanto mobile) */
+body.dark-mode .nav-desktop a.active,
+body.dark-mode .mobile-menu a.active {
+    color: var(--color-primary) !important; 
+    /* Removemos o background-color daqui */
+}
+
+/* Ajusta o FUNDO do link ativo (APENAS no menu mobile) */
+body.dark-mode .mobile-menu a.active {
+    background-color: #111827; /* Fundo do menu mobile (bg-gray-900) */
+}
+
+/* Ajusta o hover do menu mobile */
+body.dark-mode .mobile-menu a:hover {
+    background-color: #374151;
+    /* bg-gray-700 */
 }
