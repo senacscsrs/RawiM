@@ -16,7 +16,7 @@ bt_calcular.addEventListener("click", function () {
             break;
 
         case "subtracao":
-            resultado = numero1 + numero2
+            resultado = numero1 - numero2
             break;
 
         case "multiplicacao":
@@ -30,6 +30,7 @@ bt_calcular.addEventListener("click", function () {
         default:
             resultado = "invalido"
     }
- resultadofinal.innerHTML = (resultado)
+resultadofinal.textContent =resultado
+resultadofinal.style.color = "red"
 
 })
