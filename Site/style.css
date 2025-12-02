@@ -374,14 +374,19 @@ img {
 
 /* --- Seção Projetos (#projetos) --- */
 .projects-grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: 90px;
     grid-template-columns: 1fr;
-    /* 1 coluna por padrão */
     gap: 2rem;
-    /* gap-8 */
+    
 }
 
 .project-card {
+    flex-basis: 450px;  /* Largura base de cada card (ajuste como quiser) */
+    flex-grow: 1;       /* Permite que ele cresça um pouco se houver espaço */
+    max-width: 550px;   /* Impede que o card fique grande demais */
     background-color: var(--color-white);
     border-radius: 0.5rem;
     box-shadow: var(--shadow-md);
