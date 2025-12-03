@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
 
-    // 5. NOVA FUNCIONALIDADE - MODO ESCURO
     const desktopToggle = document.getElementById('dark-mode-toggle');
     const mobileToggle = document.getElementById('mobile-dark-mode-toggle');
     const body = document.body;
